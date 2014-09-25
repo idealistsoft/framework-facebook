@@ -1,0 +1,31 @@
+{
+	"name": "idealistsoft/framework-facebook",
+	"description": "Facebook integration for Idealist Framework",
+	"type": "library",
+	"keywords": ["idealist","framework","social","facebook"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "jaredtking",
+			"email": "j@jaredtking.com",
+			"homepage": "http://jaredtking.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/idealistsoft/framework-facebook/issues",
+		"source": "https://github.com/idealistsoft/framework-facebook"
+	},
+    "autoload": {
+        "psr-4": {"app\\facebook\\": "src/"}
+    },
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"require-dev": {
+		"satooshi/php-coveralls": "dev-master",
+		"idealistsoft/framework-bootstrap": "dev-master",
+		"idealistsoft/framework-auth": "dev-master",
+		"robmorgan/phinx": "*"
+	},
+	"minimum-stability": "dev"
+}

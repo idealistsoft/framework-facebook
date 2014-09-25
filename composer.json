@@ -18,13 +18,21 @@
     "autoload": {
         "psr-4": {"app\\facebook\\": "src/"}
     },
+	"repositories": [
+	   {
+	     "type": "vcs",
+	     "url": "https://github.com/jaredtking/facebook-php-sdk"
+	   }
+	],
 	"require": {
-		"php": ">=5.4.0"
+		"php": ">=5.4.0",
+		"facebook/php-sdk": "dev-master"
 	},
 	"require-dev": {
 		"satooshi/php-coveralls": "dev-master",
 		"idealistsoft/framework-bootstrap": "dev-master",
 		"idealistsoft/framework-auth": "dev-master",
+		"idealistsoft/framework-social": "~1.0",
 		"robmorgan/phinx": "*"
 	},
 	"minimum-stability": "dev"

@@ -1,10 +1,12 @@
-framework-facebook [![Build Status](https://travis-ci.org/idealistsoft/framework-facebook.png?branch=master)](https://travis-ci.org/idealistsoft/framework-facebook)
+facebook
 ====================
 
-[![Coverage Status](https://coveralls.io/repos/idealistsoft/framework-facebook/badge.png)](https://coveralls.io/r/idealistsoft/framework-facebook) [![Latest Stable Version](https://poser.pugx.org/idealistsoft/framework-facebook/v/stable.png)](https://packagist.org/packages/idealistsoft/framework-facebook)
-[![Total Downloads](https://poser.pugx.org/idealistsoft/framework-facebook/downloads.png)](https://packagist.org/packages/idealistsoft/framework-facebook)
+[![Build Status](https://travis-ci.org/infusephp/facebook.png?branch=master)](https://travis-ci.org/infusephp/facebook)
+[![Coverage Status](https://coveralls.io/repos/infusephp/facebook/badge.png)](https://coveralls.io/r/infuse/facebook) [![Latest Stable Version](https://poser.pugx.org/infuse/facebook/v/stable.png)](https://packagist.org/packages/infusephp/facebook)
+[![Total Downloads](https://poser.pugx.org/infuse/facebook/downloads.png)](https://packagist.org/packages/infuse/facebook)
+[![HHVM Status](http://hhvm.h4cc.de/badge/infuse/facebook.svg)](http://hhvm.h4cc.de/package/infuse/facebook)
 
-facebook integration for Idealist Framework
+Facebook integration for Infuse Framework
 
 ## Installation
 

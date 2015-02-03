@@ -1,8 +1,8 @@
 {
-	"name": "idealistsoft/framework-facebook",
-	"description": "Facebook integration for Idealist Framework",
+	"name": "infuse/facebook",
+	"description": "Facebook integration for Infuse Framework",
 	"type": "library",
-	"keywords": ["idealist","framework","social","facebook"],
+	"keywords": ["infuse","framework","social","facebook"],
 	"license": "MIT",
 	"authors": [
 		{
@@ -12,8 +12,8 @@
 		}
 	],
 	"support": {
-		"issues": "https://github.com/idealistsoft/framework-facebook/issues",
-		"source": "https://github.com/idealistsoft/framework-facebook"
+		"issues": "https://github.com/infusephp/facebook/issues",
+		"source": "https://github.com/infusephp/facebook"
 	},
     "autoload": {
         "psr-4": {"app\\facebook\\": "src/"}
@@ -26,12 +26,12 @@
 	],
 	"require": {
 		"php": ">=5.4.0",
-		"idealistsoft/framework-social": "~1.0",
+		"infuse/social": "~1.0",
 		"facebook/php-sdk": "dev-master"
 	},
 	"require-dev": {
-		"idealistsoft/framework-bootstrap": "~1.1",
-		"idealistsoft/framework-auth": "~1.0",
+		"infuse/bootstrap": "~1.1",
+		"infuse/auth": "~1.0",
 		"satooshi/php-coveralls": "0.6.1",
 		"robmorgan/phinx": "~0.3",
 		"mockery/mockery": "0.9.1"

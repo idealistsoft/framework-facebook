@@ -10,4 +10,8 @@ Facebook integration for Infuse Framework
 
 ## Installation
 
-Simply add the composer package in the require section of your app's `composer.json` and run `composer update`
+Install the package with [composer](http://getcomposer.org):
+
+```
+composer require infuse/facebook
+```

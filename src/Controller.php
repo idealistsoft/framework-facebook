@@ -14,12 +14,7 @@ class Controller
     use \InjectApp;
 
     public static $properties = [
-        'models' => [ 'FacebookProfile' ],
-        'routes' => [
-            'get /facebook/connect' => 'connect',
-            'get /facebook/callback' => 'callback',
-            'post /facebook/disconnect' => 'disconnect',
-        ],
+        'models' => ['FacebookProfile'],
     ];
 
     public static $scaffoldAdmin;
@@ -28,6 +23,11 @@ class Controller
 
     public function middleware($req, $res)
     {
+        // add routes
+        $this->app->get('/facebook/connect', 'connect')
+                  ->get('/facebook/callback', 'callback')
+                  ->post('/facebook/disconnect', 'disconnect');
+
         $this->app[ 'facebook' ] = function ($c) {
             return new Facebook($c[ 'config' ]->get('facebook'));
         };
@@ -151,7 +151,7 @@ class Controller
                             'title' => 'Switch accounts?',
                             'otherUser' => $user,
                             'otherProfile' => $user->facebookProfile(),
-                            'logoutUrl' => $facebook->getLogoutUrl(['next' => $logoutNextUrl]) ]);
+                            'logoutUrl' => $facebook->getLogoutUrl(['next' => $logoutNextUrl]), ]);
                     }
                 }
 

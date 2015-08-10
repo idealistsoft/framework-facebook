@@ -24,9 +24,9 @@ class Controller
     public function middleware($req, $res)
     {
         // add routes
-        $this->app->get('/facebook/connect', 'connect')
-                  ->get('/facebook/callback', 'callback')
-                  ->post('/facebook/disconnect', 'disconnect');
+        $this->app->get('/facebook/connect', ['facebook\\Controller', 'connect'])
+                  ->get('/facebook/callback', ['facebook\\Controller', 'callback'])
+                  ->post('/facebook/disconnect', ['facebook\\Controller', 'disconnect']);
 
         $this->app[ 'facebook' ] = function ($c) {
             return new Facebook($c[ 'config' ]->get('facebook'));

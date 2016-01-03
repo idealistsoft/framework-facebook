@@ -2,7 +2,7 @@
 
 namespace app\facebook\models;
 
-use infuse\Utility as U;
+use Infuse\Utility as U;
 use app\social\models\SocialMediaProfile;
 
 class FacebookProfile extends SocialMediaProfile
@@ -89,7 +89,7 @@ class FacebookProfile extends SocialMediaProfile
             'bio' => 'bio',
             'friends_count' => 'friends_count',
             'age' => 'age',
-            'birthday' => 'birthday' ];
+            'birthday' => 'birthday', ];
     }
 
     public function daysUntilStale()
@@ -162,7 +162,7 @@ class FacebookProfile extends SocialMediaProfile
     private function parseBirthday($birthdayStr)
     {
         if (empty($birthdayStr)) {
-            return [ 0, 0 ];
+            return [0, 0];
         }
 
         // month/day/year
@@ -180,6 +180,6 @@ class FacebookProfile extends SocialMediaProfile
         $age = $diff->y;
         $birthdayTs = (int) (floor($birthday->format('U') / 86400) * 86400);
 
-        return [ $age, $birthdayTs ];
+        return [$age, $birthdayTs];
     }
 }

@@ -2,8 +2,8 @@
 
 namespace app\facebook;
 
-use infuse\Utility as U;
-use infuse\View;
+use Infuse\Utility as U;
+use Infuse\View;
 use Facebook;
 use app\users\models\User;
 use app\facebook\models\FacebookProfile;

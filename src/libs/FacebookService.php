@@ -2,7 +2,7 @@
 
 namespace app\facebook\libs;
 
-use infuse\Utility as U;
+use Infuse\Utility as U;
 use Pimple\Container;
 use app\facebook\models\FacebookProfile;
 
@@ -19,7 +19,7 @@ class FacebookService
 
     /**
      * Sets the appropriate API access token using
-     * a given profile
+     * a given profile.
      *
      * @param FacebookProfile $profile
      */
@@ -33,7 +33,7 @@ class FacebookService
 
     /**
      * Performs an API call on the facebook API (if available) or
-     * returns a mock response
+     * returns a mock response.
      *
      * @param string $endpoint
      * @param string $method   HTTP method

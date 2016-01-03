@@ -1,6 +1,6 @@
 <?php
 
-use infuse\Database;
+use Infuse\Database;
 use app\facebook\models\FacebookProfile;
 
 class FacebookProfileTest extends \PHPUnit_Framework_TestCase
@@ -11,7 +11,7 @@ class FacebookProfileTest extends \PHPUnit_Framework_TestCase
     public static function setUpBeforeClass()
     {
         // delete old profiles
-        Database::delete('FacebookProfiles', [ 'id >= 1', 'id <= 2' ]);
+        Database::delete('FacebookProfiles', ['id >= 1', 'id <= 2']);
 
 /*
         $response = [
@@ -95,9 +95,9 @@ class FacebookProfileTest extends \PHPUnit_Framework_TestCase
 
         $app = TestBootstrap::app();
         $facebook = Mockery::mock('FacebookService');
-        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([ $profile ])->once();
-        $facebook->shouldReceive('api')->withArgs([ 'me', 'get' ])
-            ->andReturn([ 'id' => 100 ])->once();
+        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([$profile])->once();
+        $facebook->shouldReceive('api')->withArgs(['me', 'get'])
+            ->andReturn(['id' => 100])->once();
         $app[ 'facebook_service' ] = $facebook;
 
         $this->assertTrue($profile->isLoggedIn());
@@ -109,8 +109,8 @@ class FacebookProfileTest extends \PHPUnit_Framework_TestCase
 
         $app = TestBootstrap::app();
         $facebook = Mockery::mock('FacebookService');
-        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([ $profile ])->once();
-        $facebook->shouldReceive('api')->withArgs([ 'me', 'get' ])
+        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([$profile])->once();
+        $facebook->shouldReceive('api')->withArgs(['me', 'get'])
             ->andReturn(false)->once();
         $app[ 'facebook_service' ] = $facebook;
 
@@ -123,9 +123,9 @@ class FacebookProfileTest extends \PHPUnit_Framework_TestCase
 
         $app = TestBootstrap::app();
         $facebook = Mockery::mock('FacebookService');
-        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([ $profile ])->once();
-        $facebook->shouldReceive('api')->withArgs([ 'me/friends', 'get' ])
-            ->andReturn([ 'data' => range(1, 15) ])->once();
+        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([$profile])->once();
+        $facebook->shouldReceive('api')->withArgs(['me/friends', 'get'])
+            ->andReturn(['data' => range(1, 15)])->once();
         $app[ 'facebook_service' ] = $facebook;
 
         $this->assertEquals(15, $profile->getFriendsCount());
@@ -137,8 +137,8 @@ class FacebookProfileTest extends \PHPUnit_Framework_TestCase
 
         $app = TestBootstrap::app();
         $facebook = Mockery::mock('FacebookService');
-        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([ $profile ])->once();
-        $facebook->shouldReceive('api')->withArgs([ 'me/friends', 'get' ])
+        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([$profile])->once();
+        $facebook->shouldReceive('api')->withArgs(['me/friends', 'get'])
             ->andReturn(false)->once();
         $app[ 'facebook_service' ] = $facebook;
 
@@ -193,14 +193,14 @@ class FacebookProfileTest extends \PHPUnit_Framework_TestCase
             'bio' => 'test',
         ];
 
-        $response2 = [ 'data' => range(1, 15) ];
+        $response2 = ['data' => range(1, 15)];
 
         $app = TestBootstrap::app();
         $facebook = Mockery::mock('FacebookService');
-        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([ self::$profile ])->twice();
-        $facebook->shouldReceive('api')->withArgs([ 'me', 'get' ])
+        $facebook->shouldReceive('setAccessTokenFromProfile')->withArgs([self::$profile])->twice();
+        $facebook->shouldReceive('api')->withArgs(['me', 'get'])
             ->andReturn($response)->once();
-        $facebook->shouldReceive('api')->withArgs([ 'me/friends', 'get' ])
+        $facebook->shouldReceive('api')->withArgs(['me/friends', 'get'])
             ->andReturn($response2)->once();
         $app[ 'facebook_service' ] = $facebook;
 
@@ -220,7 +220,7 @@ class FacebookProfileTest extends \PHPUnit_Framework_TestCase
             'bio' => 'test',
             'friends_count' => 15, ];
 
-        $profile = self::$profile->toArray([ 'last_refreshed', 'created_at', 'updated_at' ]);
+        $profile = self::$profile->toArray(['last_refreshed', 'created_at', 'updated_at']);
 
         $this->assertEquals($expected, $profile);
     }
@@ -243,14 +243,14 @@ class FacebookProfileTest extends \PHPUnit_Framework_TestCase
             'bio' => 'test',
         ];
 
-        $response2 = [ 'data' => range(1, 15) ];
+        $response2 = ['data' => range(1, 15)];
 
         $app = TestBootstrap::app();
         $facebook = Mockery::mock('FacebookService');
         $facebook->shouldReceive('setAccessTokenFromProfile')->twice();
-        $facebook->shouldReceive('api')->withArgs([ 'me', 'get' ])
+        $facebook->shouldReceive('api')->withArgs(['me', 'get'])
             ->andReturn($response)->once();
-        $facebook->shouldReceive('api')->withArgs([ 'me/friends', 'get' ])
+        $facebook->shouldReceive('api')->withArgs(['me/friends', 'get'])
             ->andReturn($response2)->once();
         $app[ 'facebook_service' ] = $facebook;
 
